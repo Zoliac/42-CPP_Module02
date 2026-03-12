@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 10:26:05 by lpatin            #+#    #+#             */
-/*   Updated: 2026/03/12 14:48:09 by lpatin           ###   ########.fr       */
+/*   Created: 2026/03/12 14:50:45 by lpatin            #+#    #+#             */
+/*   Updated: 2026/03/12 17:40:32 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,27 @@ int Fixed::getRawBits(void){
 
 void Fixed::setRawBits(int const raw){
 	this->_fpn_value = raw;
+}
+
+Fixed::Fixed(const int n){
+	std::cout << "Int constructor called" << std::endl;
+	this->_fpn_value = n << this->_n_frac_bits;
+}
+
+Fixed::Fixed(const float f){
+	std::cout << "Float constructor called" << std::endl;
+	this->_fpn_value = roundf(f * (1 << this->_n_frac_bits));
+}
+
+float Fixed::toFloat(void) const{
+	return (float)this->_fpn_value / (1 << this->_n_frac_bits);
+}
+
+int Fixed::toInt(void) const{
+	return (int)this->_fpn_value * (1 >> this->_n_frac_bits);
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
+	out << fixed.toFloat();
+	return out;
 }
