@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:50:45 by lpatin            #+#    #+#             */
-/*   Updated: 2026/03/12 17:40:32 by lpatin           ###   ########.fr       */
+/*   Updated: 2026/03/13 13:32:08 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ float Fixed::toFloat(void) const{
 }
 
 int Fixed::toInt(void) const{
-	return (int)this->_fpn_value * (1 >> this->_n_frac_bits);
+	return this->_fpn_value >> this->_n_frac_bits;
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
