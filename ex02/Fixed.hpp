@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:50:43 by lpatin            #+#    #+#             */
-/*   Updated: 2026/03/13 14:37:11 by lpatin           ###   ########.fr       */
+/*   Updated: 2026/03/17 16:13:37 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,18 @@ class Fixed {
 		int toInt(void) const;
 		int getRawBits(void);
 		void setRawBits(int const raw);
-		friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
-
+		
 		//Comparaisons
-
+		
 		bool operator>(const Fixed& other) const;
 		bool operator<(const Fixed& other) const;
 		bool operator>=(const Fixed& other) const;
 		bool operator<=(const Fixed& other) const;
 		bool operator==(const Fixed& other) const;
 		bool operator!=(const Fixed& other) const;
-
+		
 		//Arithmetique
-
+		
 		Fixed operator+(const Fixed& other) const;
 		Fixed operator-(const Fixed& other) const;
 		Fixed operator*(const Fixed& other) const;
@@ -67,5 +66,6 @@ class Fixed {
 		static const Fixed& max(const Fixed& a, const Fixed& b);
 };
 
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

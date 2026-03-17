@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 10:26:05 by lpatin            #+#    #+#             */
-/*   Updated: 2026/03/12 14:48:09 by lpatin           ###   ########.fr       */
+/*   Updated: 2026/03/17 13:10:49 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits(void){
+int Fixed::getRawBits(void) const{
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_fpn_value;
 }

@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 10:26:03 by lpatin            #+#    #+#             */
-/*   Updated: 2026/03/12 12:58:05 by lpatin           ###   ########.fr       */
+/*   Updated: 2026/03/17 13:10:21 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed {
 		Fixed(const Fixed& other);
 		Fixed& operator=(const Fixed& other);
 		~Fixed();
-		int getRawBits(void);
+		int getRawBits(void) const;
 		void setRawBits(int const raw);
 };
 
